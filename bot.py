@@ -65,7 +65,7 @@ greetings = ["We will persevere!",
 
 # This is the basic discord bot setup
 client = discord.Client()
-bot = commands.Bot(command_prefix="!")
+bot = commands.Bot(command_prefix="$")
 
 
 # Confirmation that the bot has started and connected
@@ -144,6 +144,7 @@ async def raid_create(ctx, raid_name=None, players=None, date=None, raid_time=No
         await ctx.send(f'{temp[0]} raid has been created for {temp[1]}, and will take place on {temp[2]} at {temp[3]}')
     raid_list = []
 
+
 # raid search command for regular members
 @bot.command()
 async def raid_events(ctx):
@@ -186,14 +187,13 @@ async def raid_delete(ctx, name=None, date=None, raid_time=None):
 
             for row in reader:
                 lines.append(row)
-                if not row:
-                    continue
-                elif row[0] == name and row[2] == date and row[3] == raid_time:
+
+                if row[0] == name and row[2] == date and row[3] == raid_time:
                     lines.remove(row)
                     await ctx.send("Raid deleted")
+                elif not row:
+                    continue
                 # fix this statement due to repeat output
-                else:
-                    await ctx.send("Could not find that raid!")
 
         with open('raid_list.csv', 'w', newline='') as writeFile:
 
@@ -202,4 +202,4 @@ async def raid_delete(ctx, name=None, date=None, raid_time=None):
             writer.writerows(lines)
 
 
-bot.run("NzY0MTg0MzMyNjM3OTYyMjcx.X4CkHg.TwmWI3w21AUjo_0ern9aO8HBxCc")
+bot.run("NzYyOTcyNzgwNzI3NjMxODcz.X3w7xg.RwwDYmafeqSORjNEmKvw5uCf9Xo")
