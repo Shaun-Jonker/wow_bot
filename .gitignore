@@ -3,3 +3,8 @@ discord.log
 key.csv
 !/key.csv
 venv/
+.idea/
+__pycache__/
+key.csv
+!/key.csv
+!/key.csv
