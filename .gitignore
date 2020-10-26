@@ -3,3 +3,4 @@ discord.log
 venv/
 .idea/
 __pycache__/
+key.csv
