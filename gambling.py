@@ -1,22 +1,14 @@
-import discord
 import random
-import time
-import logging
 from discord.ext import commands
-import csv
-from writer import Writer
 
 
 class Economy(commands.Cog):
-    ...
 
     async def withdraw_money(self, member, money):
-        # implementation here
-        ...
+        pass
 
     async def deposit_money(self, member, money):
-        # implementation here
-        ...
+        pass
 
 
 class Gambling(commands.Cog):
