@@ -18,6 +18,11 @@ raid_list = list()
 delete_list = list()
 w = Writer()
 
+with open("key.csv", "r") as key:
+    reader = csv.reader(key)
+    token = next(reader)
+
+
 # Greetings List
 greetings = ["We will persevere!",
              "Our enemies will fall!",
@@ -202,4 +207,4 @@ async def raid_delete(ctx, name=None, date=None, raid_time=None):
             writer.writerows(lines)
 
 
-bot.run("NzYyOTcyNzgwNzI3NjMxODcz.X3w7xg.RwwDYmafeqSORjNEmKvw5uCf9Xo")
+bot.run(token[0])
